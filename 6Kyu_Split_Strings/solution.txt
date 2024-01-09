@@ -1,0 +1,10 @@
+def solution(s):
+    pairArray = []
+    i = 0
+    while i < (len(s)):
+        if i+1 < len(s):
+            pairArray.append(s[i] + s[i+1])
+        else:
+            pairArray.append(s[i] + "_")
+        i += 2
+    return pairArray
