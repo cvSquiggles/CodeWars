@@ -1,0 +1,18 @@
+def rgb(r, g, b):
+    colorValues = [r, g, b]
+    hexString = "000000"
+    for i in colorValues:
+        if i < 0:
+            i = 0
+        elif i > 255:
+            i = 255
+        i = hex(i)
+        start = (i.find('x') + 1)
+        hexVal = i[start::]
+        if len(hexVal) == 1:
+            hexVal = "0" + hexVal
+        if hexString == "000000":
+            hexString = hexVal
+        else:
+            hexString = hexString + hexVal
+    return hexString.upper()
