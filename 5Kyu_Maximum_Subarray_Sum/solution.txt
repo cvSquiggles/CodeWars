@@ -1,0 +1,16 @@
+def max_sequence(arr):
+    recordSum = 0  # Track highest sum encountered
+    currentSum = 0 # Track current sum total since not adding up to less than 1
+    if len(arr) == 0:
+        pass
+    else:
+        i = 0
+        while i < (len(arr)):  # Loop through the passed in array
+            currentSum = currentSum + arr[i]  # add the array value to currentSum
+            if currentSum > 0:  # If currentSum is greater than 0 afterwards, then check if it's higher than recordSum
+                if currentSum > recordSum:
+                    recordSum = currentSum  # If it is higher, then update recordSum with the new record
+            else:
+                currentSum = 0  # If currentSum is 0 or less afterwards, then reset our currentSum to 0, and tracking a new string
+            i += 1  # Increment to next value in the array
+    return recordSum
