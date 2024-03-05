@@ -1,0 +1,12 @@
+import ipaddress
+def ips_between(start, end):
+    #Convert IP's to integers
+    startInt = int(ipaddress.IPv4Address(start))
+    endInt = int(ipaddress.IPv4Address(end))
+    #Subtract the larger from the smaller
+    if endInt > startInt:
+        result = endInt - startInt
+    else:
+        result = startInt - endInt
+    #Return the result
+    return result
