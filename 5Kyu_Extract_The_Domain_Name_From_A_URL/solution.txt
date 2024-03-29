@@ -1,0 +1,6 @@
+def domain_name(url):
+    url = url.replace("http://", "")
+    url = url.replace("https://", "")
+    if(url.startswith("www.")):
+        url = url[4:] 
+    return url[:url.find('.')]
