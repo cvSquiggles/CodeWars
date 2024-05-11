@@ -1,0 +1,8 @@
+function digitalRoot(n) {
+  digits = Array.from(n.toString(), Number);  //convert integer to array of integers
+  total = digits.reduce((a, b) => a + b, 0); //sum up all the integers in the array
+  if (total >= 10) {                         //if the sum is double digit, then repeat the steps above
+    digitalRoot(total);
+  }
+  return total;                              //return single digit sum
+}
