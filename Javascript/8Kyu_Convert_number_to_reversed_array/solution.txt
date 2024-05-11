@@ -1,0 +1,3 @@
+function digitize(n) {
+  return Array.from((Array.from(n.toString(), Number).reverse().reduce((a, b) => a + b, '')).toString(), Number);
+}
