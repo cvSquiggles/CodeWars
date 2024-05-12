@@ -1,0 +1,7 @@
+function printerError(s) {
+  errors = 0;
+    s.split('').map( function (a) {
+      a.charCodeAt(0).toString(2) < 1101110 || errors++;
+    })
+  return `${errors}/${s.length}`
+}
