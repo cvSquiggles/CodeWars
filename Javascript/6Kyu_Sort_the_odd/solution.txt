@@ -1,0 +1,20 @@
+function sortArray(array) {
+  oddArray = [];
+  for (i = 0; i < array.length; i++){  //Run through the array, pull out all odds, and leave "!" placeholder
+    if (array[i] % 2 !== 0) {
+      oddArray.push(array[i]);
+      array[i] = "!";
+    }
+  }
+  
+  oddArray = oddArray.sort(function(a, b) { return a - b; }); // sort oddArray in ascending order
+  
+  for (i = 0, j = 0; i < array.length; i++){  //Run through again and fill each placeholder with the next oddArray value.
+    if (array[i] === "!") {
+      array[i] = oddArray[j];
+      j++;
+    }
+  }
+  
+  return array;
+}
