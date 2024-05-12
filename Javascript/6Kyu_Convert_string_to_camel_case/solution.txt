@@ -1,0 +1,7 @@
+function toCamelCase(str){
+    key = str.split(/-|_/);
+  for (i = 1; i < key.length; i++) {
+      key[i] = key[i].charAt(0).toUpperCase() + key[i].slice(1);
+  }
+  return key.join('');
+}
