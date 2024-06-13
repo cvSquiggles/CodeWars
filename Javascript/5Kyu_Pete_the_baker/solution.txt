@@ -1,0 +1,30 @@
+function cakes(recipe, available) {
+    let cakeCount = 0;
+    let inStock = true;
+    //Store the keys for each list
+    const requirements = Object.keys(recipe);
+    const resources = Object.keys(available);
+    
+    //For each requirement, check to see if we have it in our available resources, if not, then don't bother looking further, return 0 cakes
+    requirements.forEach((requirement) => {
+        if (!resources.includes(requirement)){
+            inStock = false;
+        }
+    });
+
+    //While inStock is true, 
+    while(inStock){
+        for(let i = 0; i < requirements.length; i++){
+            //console.log(`Here's what we're looking at ${requirements[i]}, and we have: ${available[requirements[i]]}`)
+            if(recipe[requirements[i]] > available[requirements[i]]){
+                return cakeCount;
+            } else {
+                available[requirements[i]] -= recipe[requirements[i]]
+            }
+        }
+
+        cakeCount++;
+    }
+
+    return cakeCount;
+  }
