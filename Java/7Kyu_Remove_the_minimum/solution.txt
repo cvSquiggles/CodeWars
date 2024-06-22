@@ -1,0 +1,25 @@
+import java.util.*;
+import java.util.stream.*;
+
+public class Remover {
+
+  public static int[] removeSmallest(int[] numbers) {
+    //show me the code!
+        if (numbers.length == 0) {
+            return IntStream.empty().toArray();
+        }
+        int[] result = Arrays.stream(numbers).sorted().toArray();
+        int[] newResult = new int[ result.length - 1 ];
+        int j = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] != result[0]) {
+                newResult[j] = numbers[i];
+                j++;
+            }else{
+                result[0] = -1;
+            }
+         }
+
+        return newResult;
+  }
+}
