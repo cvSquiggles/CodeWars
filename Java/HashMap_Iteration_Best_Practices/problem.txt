@@ -1,0 +1,26 @@
+Question: What is the best way to iterate through a HashMap in Java?
+
+Description:
+HashMap is one of the most commonly used data structures in Java for storing key-value pairs. 
+There are multiple ways to iterate through a HashMap, each with its own use cases and performance characteristics.
+
+Common iteration methods:
+1. Using entrySet() - Iterate over both keys and values (most efficient when you need both)
+2. Using keySet() - Iterate over keys only
+3. Using values() - Iterate over values only
+4. Using Iterator - Traditional iteration with more control
+5. Using forEach with lambda (Java 8+) - Modern, functional approach
+6. Using Stream API (Java 8+) - For complex operations and transformations
+
+Best Practices:
+- Use entrySet() when you need both keys and values (most common case)
+- Use forEach with lambda for cleaner, more readable code in Java 8+
+- Use Stream API when you need to perform filtering, mapping, or other transformations
+- Avoid using keySet() and then calling get(key) - this is less efficient than using entrySet()
+
+Performance Considerations:
+- entrySet() is generally the most efficient for accessing both keys and values
+- Using keySet() with map.get(key) requires additional lookups
+- Modern forEach and Stream approaches have similar performance to traditional loops
+
+This example demonstrates all common iteration methods with practical examples.
